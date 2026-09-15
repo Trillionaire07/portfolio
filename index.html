@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Hub - Data Analytics & Cybersecurity Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="portfolio-container">
+    <!-- Hero Header -->
+    <header class="hero glass">
+      <div class="hero-badge">🚀 Interactive Portfolio Showcase</div>
+      <h1>Data Analytics & Cybersecurity Portfolio</h1>
+      <p class="hero-desc">
+        Explore production-ready analytical pipelines, interactive business dashboards, and real-time SIEM threat detection engines built to demonstrate end-to-end technical capability.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Live Projects ↓</a>
+      </div>
+    </header>
+
+    <!-- Projects Grid -->
+    <section id="projects" class="projects-section">
+      <h2 class="section-title">Featured Resume Projects</h2>
+      
+      <div class="projects-grid">
+        <!-- Project 1 Card: Data Analytics -->
+        <div class="project-card glass">
+          <div class="card-banner analytics-banner">
+            <span class="banner-icon">📊</span>
+            <span class="category-tag">DATA ANALYTICS</span>
+          </div>
+          <div class="card-content">
+            <h3>E-Commerce Sales & Customer Churn Analytics</h3>
+            <p>
+              End-to-end analytics platform analyzing 1,000+ orders to calculate KPIs (Revenue, AOV, CSAT) and uncover early indicators of customer churn.
+            </p>
+            <div class="tech-stack">
+              <span>Python</span>
+              <span>Pandas</span>
+              <span>Chart.js</span>
+              <span>EDA</span>
+              <span>HTML5 / CSS3</span>
+            </div>
+            <div class="card-footer">
+              <a href="01_Data_Analytics_Ecommerce/index.html" class="btn-demo">Launch Live App ↗</a>
+              <a href="01_Data_Analytics_Ecommerce/README.md" class="btn-code">View Documentation</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 Card: Cybersecurity -->
+        <div class="project-card glass">
+          <div class="card-banner cyber-banner">
+            <span class="banner-icon">🛡️</span>
+            <span class="category-tag cyber-tag">CYBERSECURITY</span>
+          </div>
+          <div class="card-content">
+            <h3>SIEM Security Log Analyzer & Threat Detection Engine</h3>
+            <p>
+              Python threat detection engine parsing Linux auth logs and Apache web logs using regex to flag SQLi, XSS, Path Traversal, and SSH brute force.
+            </p>
+            <div class="tech-stack">
+              <span>Python Regex</span>
+              <span>SIEM Telemetry</span>
+              <span>Log Analysis</span>
+              <span>SOC Dashboard</span>
+              <span>Threat Scoring</span>
+            </div>
+            <div class="card-footer">
+              <a href="02_Cybersecurity_SIEM_Log_Analyzer/index.html" class="btn-demo cyber-btn">Launch SOC App ↗</a>
+              <a href="02_Cybersecurity_SIEM_Log_Analyzer/README.md" class="btn-code">View Documentation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Copy-Paste Prompt Box -->
+    <section class="resume-section glass">
+      <h3>📋 Resume Bullet Points Preview</h3>
+      <p class="resume-intro">Copy these pre-formatted bullet points directly to your resume under <strong>Projects</strong>:</p>
+      
+      <div class="code-block">
+        <pre><code><strong>E-Commerce Customer Behavior & Revenue Analytics</strong> | Python, Pandas, Chart.js, HTML5/CSS3
+• Designed an end-to-end data analytics pipeline analyzing transaction records to evaluate revenue drivers and customer retention indicators across global regions.
+• Developed an interactive executive web dashboard featuring real-time category/region filtering, tracking KPIs including Total Revenue, Average Order Value (AOV), and CSAT.
+• Identified critical customer retention insight: CSAT scores < 2.5 correlated with 100% of high churn risk cases, formulating actionable fulfillment optimization recommendations.
+
+<strong>SIEM Security Log Analyzer & Threat Detection Engine</strong> | Python, Regex, Log Analysis, Security Operations (SOC)
+• Built a Python-based SIEM log parser utilizing custom regular expressions to ingest Linux auth.log and Apache access logs, detecting SQLi, XSS, and SSH brute force attacks.
+• Implemented a threshold-based anomaly detection algorithm identifying suspicious IP addresses with 3+ failed logins, categorizing incidents by severity (CRITICAL, HIGH).
+• Created an interactive Security Operations Center (SOC) dashboard using Chart.js to visualize live attack vectors, top malicious IPs, and automated incident response playbooks.</code></pre>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© Portfolio Showcase | Powered by GitHub Pages</p>
+    </footer>
+  </div>
+</body>
+</html>

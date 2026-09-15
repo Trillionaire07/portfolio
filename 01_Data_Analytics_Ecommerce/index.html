@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Executive Sales & Churn Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar / Brand Header -->
+    <header class="navbar">
+      <div class="brand">
+        <div class="logo-icon">📊</div>
+        <div>
+          <h1>ApexAnalytics</h1>
+          <span class="subtitle">E-Commerce Customer & Revenue Intelligence Dashboard</span>
+        </div>
+      </div>
+      <div class="user-badge">
+        <a href="../index.html" class="nav-back-link">← Portfolio Hub</a>
+        <span class="live-dot"></span> Live GitHub Showcase
+      </div>
+    </header>
+
+    <!-- Filter Toolbar -->
+    <section class="filter-bar">
+      <div class="filter-group">
+        <label for="regionFilter">Region:</label>
+        <select id="regionFilter">
+          <option value="ALL">All Regions</option>
+          <option value="North America">North America</option>
+          <option value="Europe">Europe</option>
+          <option value="Asia Pacific">Asia Pacific</option>
+          <option value="Latin America">Latin America</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="categoryFilter">Category:</label>
+        <select id="categoryFilter">
+          <option value="ALL">All Categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Apparel">Apparel</option>
+          <option value="Home & Kitchen">Home & Kitchen</option>
+          <option value="Beauty & Personal Care">Beauty & Personal Care</option>
+          <option value="Sports & Outdoors">Sports & Outdoors</option>
+          <option value="Books">Books</option>
+        </select>
+      </div>
+
+      <div class="filter-group search-group">
+        <label for="searchInput">Search Data:</label>
+        <input type="text" id="searchInput" placeholder="Search order ID, product, customer...">
+      </div>
+
+      <button id="resetFiltersBtn" class="btn-reset">Reset Filters</button>
+    </section>
+
+    <!-- KPI Summary Cards -->
+    <section class="kpi-grid">
+      <div class="kpi-card glass">
+        <div class="kpi-icon blue">💰</div>
+        <div class="kpi-info">
+          <span class="kpi-title">Total Revenue</span>
+          <h2 id="kpiRevenue">$0.00</h2>
+          <span class="kpi-sub green">↑ 14.2% vs last quarter</span>
+        </div>
+      </div>
+
+      <div class="kpi-card glass">
+        <div class="kpi-icon purple">📦</div>
+        <div class="kpi-info">
+          <span class="kpi-title">Total Orders</span>
+          <h2 id="kpiOrders">0</h2>
+          <span class="kpi-sub">30 Completed Transactions</span>
+        </div>
+      </div>
+
+      <div class="kpi-card glass">
+        <div class="kpi-icon green">🏷️</div>
+        <div class="kpi-info">
+          <span class="kpi-title">Avg Order Value (AOV)</span>
+          <h2 id="kpiAOV">$0.00</h2>
+          <span class="kpi-sub">Healthy cart sizing</span>
+        </div>
+      </div>
+
+      <div class="kpi-card glass">
+        <div class="kpi-icon orange">⭐</div>
+        <div class="kpi-info">
+          <span class="kpi-title">Avg CSAT Score</span>
+          <h2 id="kpiCSAT">0.0 / 5.0</h2>
+          <span class="kpi-sub">Based on customer ratings</span>
+        </div>
+      </div>
+
+      <div class="kpi-card glass">
+        <div class="kpi-icon red">⚠️</div>
+        <div class="kpi-info">
+          <span class="kpi-title">High Churn Risk</span>
+          <h2 id="kpiChurn">0%</h2>
+          <span class="kpi-sub red-text">Requires retention focus</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Charts Grid -->
+    <section class="charts-grid">
+      <div class="chart-card glass span-2">
+        <div class="chart-header">
+          <h3>📈 Monthly Revenue & Order Volume</h3>
+          <span class="badge">Sales Velocity</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="revenueTrendChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card glass">
+        <div class="chart-header">
+          <h3>🍩 Revenue by Category</h3>
+          <span class="badge">Product Share</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="categoryDonutChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card glass">
+        <div class="chart-header">
+          <h3>🌍 Regional Sales Performance</h3>
+          <span class="badge">Geographic Breakdown</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="regionBarChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card glass span-2">
+        <div class="chart-header">
+          <h3>⚡ Customer Satisfaction vs Churn Risk</h3>
+          <span class="badge">Churn Diagnostic</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="churnSatisfactionChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Raw Data Transactions Table -->
+    <section class="table-section glass">
+      <div class="table-header">
+        <h3>📋 Transactions & Risk Register</h3>
+        <span class="table-count" id="tableCount">Showing 30 records</span>
+      </div>
+      <div class="table-wrapper">
+        <table id="ordersTable">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Date</th>
+              <th>Customer</th>
+              <th>Region</th>
+              <th>Category</th>
+              <th>Product</th>
+              <th>Qty</th>
+              <th>Total ($)</th>
+              <th>CSAT</th>
+              <th>Churn Risk</th>
+            </tr>
+          </thead>
+          <tbody id="ordersTableBody">
+            <!-- Dynamically Rendered -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

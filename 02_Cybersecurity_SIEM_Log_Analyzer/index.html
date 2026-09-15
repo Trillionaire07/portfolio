@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOC Security Operations Center - SIEM Threat Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="soc-container">
+    <!-- Header / Brand -->
+    <header class="soc-header">
+      <div class="brand">
+        <div class="shield-icon">🛡️</div>
+        <div>
+          <h1>AegisGuard SIEM</h1>
+          <span class="subtitle">Real-Time Threat Detection & Security Operations Dashboard</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <a href="../index.html" class="soc-nav-back">← Portfolio Hub</a>
+        <div class="status-indicator">
+          <span class="pulse-red"></span> THREAT ALERT: ELEVATED RISK LEVEL
+        </div>
+      </div>
+    </header>
+
+    <!-- Quick Stats Metric Cards -->
+    <section class="metrics-grid">
+      <div class="metric-card">
+        <span class="metric-label">Total Logs Analyzed</span>
+        <h2 id="totalLogs">27 Events</h2>
+        <span class="metric-sub">auth.log & access.log</span>
+      </div>
+
+      <div class="metric-card critical">
+        <span class="metric-label">Threat Incidents Detected</span>
+        <h2 id="threatCount">14 Attacks</h2>
+        <span class="metric-sub red">Critical & High Severity</span>
+      </div>
+
+      <div class="metric-card warning">
+        <span class="metric-label">Brute Force Attempts</span>
+        <h2 id="bruteForceCount">6 Spikes</h2>
+        <span class="metric-sub yellow">SSH Port 22</span>
+      </div>
+
+      <div class="metric-card info">
+        <span class="metric-label">Flagged Malicious IPs</span>
+        <h2 id="flaggedIPs">3 Unique IPs</h2>
+        <span class="metric-sub">Auto-Blocked on Firewall</span>
+      </div>
+    </section>
+
+    <!-- Interactive Filter Bar -->
+    <section class="filter-toolbar">
+      <div class="filter-item">
+        <label for="severityFilter">Severity:</label>
+        <select id="severityFilter">
+          <option value="ALL">All Severities</option>
+          <option value="CRITICAL">Critical</option>
+          <option value="HIGH">High</option>
+          <option value="MEDIUM">Medium</option>
+        </select>
+      </div>
+
+      <div class="filter-item">
+        <label for="attackTypeFilter">Attack Vector:</label>
+        <select id="attackTypeFilter">
+          <option value="ALL">All Attack Types</option>
+          <option value="SQL_INJECTION">SQL Injection</option>
+          <option value="XSS_ATTACK">Cross-Site Scripting (XSS)</option>
+          <option value="PATH_TRAVERSAL">Path Traversal</option>
+          <option value="SSH_BRUTE_FORCE">SSH Brute Force</option>
+          <option value="RECONNAISSANCE">Reconnaissance</option>
+        </select>
+      </div>
+
+      <div class="filter-item search-item">
+        <label for="ipSearch">IP / Payload Search:</label>
+        <input type="text" id="ipSearch" placeholder="Filter by IP address or URI...">
+      </div>
+
+      <button id="resetSecFilters" class="btn-sec-reset">Reset Filters</button>
+    </section>
+
+    <!-- Main SOC Grid -->
+    <section class="soc-grid">
+      <!-- Live Incident Feed Table -->
+      <div class="soc-card main-feed span-2">
+        <div class="card-title">
+          <h3>🚨 Live Incident Security Feed</h3>
+          <span class="badge red-badge">Real-Time Telemetry</span>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Source IP</th>
+                <th>Vector</th>
+                <th>Severity</th>
+                <th>Target Payload / Detail</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="incidentFeedBody">
+              <!-- Dynamically Populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Attack Breakdown Charts -->
+      <div class="soc-card">
+        <div class="card-title">
+          <h3>📊 Attack Vectors Breakdown</h3>
+        </div>
+        <div class="chart-box">
+          <canvas id="attackTypeChart"></canvas>
+        </div>
+      </div>
+
+      <div class="soc-card">
+        <div class="card-title">
+          <h3>🌐 Top Threat Origin IPs</h3>
+        </div>
+        <div class="chart-box">
+          <canvas id="ipThreatChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Mitigation Playbook Widget -->
+      <div class="soc-card span-2">
+        <div class="card-title">
+          <h3>🛡️ SOC Automated Incident Response Playbook</h3>
+          <span class="badge blue-badge">Active Rules</span>
+        </div>
+        <div class="playbook-list">
+          <div class="playbook-item">
+            <span class="pb-tag red">SSH BRUTE FORCE</span>
+            <p>IP <code>45.33.32.156</code> exceeded 5 failed authentication attempts in 60s. Auto-added rule to iptables drop list: <code>iptables -A INPUT -s 45.33.32.156 -j DROP</code>.</p>
+          </div>
+          <div class="playbook-item">
+            <span class="pb-tag red">SQL INJECTION</span>
+            <p>Detected <code>UNION SELECT</code> payload from IP <code>185.220.101.5</code>. WAF blocked HTTP request (HTTP 403 Forbidden). Session invalidated.</p>
+          </div>
+          <div class="playbook-item">
+            <span class="pb-tag yellow">XSS ATTACK</span>
+            <p>Stored XSS attempt sanitizing HTML tags on <code>/comment</code> endpoint. Input sanitized via DOMPurify encoder.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

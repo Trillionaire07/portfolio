@@ -1,0 +1,31 @@
+Order_ID,Customer_ID,Order_Date,Region,Category,Product,Quantity,Unit_Price,Discount_Percent,Total_Amount,Payment_Method,Customer_Age,Satisfaction_Score,Churn_Risk
+ORD-1001,CUST-2041,2025-01-05,North America,Electronics,Wireless Headphones,2,99.99,0.10,179.98,Credit Card,28,4.5,Low
+ORD-1002,CUST-1182,2025-01-06,Europe,Apparel,Running Shoes,1,120.00,0.00,120.00,PayPal,34,3.8,Low
+ORD-1003,CUST-3904,2025-01-07,Asia Pacific,Home & Kitchen,Smart Coffee Maker,1,150.00,0.15,127.50,Debit Card,45,2.1,High
+ORD-1004,CUST-1049,2025-01-08,North America,Electronics,4K Monitor,1,349.99,0.05,332.49,Credit Card,31,4.9,Low
+ORD-1005,CUST-4412,2025-01-10,Latin America,Beauty & Personal Care,Skincare Serum Set,3,45.00,0.20,108.00,Credit Card,22,4.0,Low
+ORD-1006,CUST-3904,2025-01-12,Asia Pacific,Home & Kitchen,Robot Vacuum,1,299.99,0.10,269.99,PayPal,45,1.8,High
+ORD-1007,CUST-5120,2025-01-15,Europe,Electronics,Mechanical Keyboard,1,89.50,0.00,89.50,Credit Card,26,4.7,Low
+ORD-1008,CUST-6119,2025-01-18,North America,Apparel,Denim Jacket,2,75.00,0.10,135.00,Apple Pay,39,3.5,Medium
+ORD-1009,CUST-7231,2025-01-20,Europe,Books,Data Science & AI Guide,3,35.00,0.05,99.75,Credit Card,29,4.8,Low
+ORD-1010,CUST-8302,2025-01-22,Asia Pacific,Electronics,Noise-Canceling Earbuds,1,149.99,0.15,127.49,Debit Card,52,2.4,High
+ORD-1011,CUST-9110,2025-01-25,Latin America,Sports & Outdoors,Yoga Mat & Blocks,2,40.00,0.00,80.00,PayPal,33,4.2,Low
+ORD-1012,CUST-1182,2025-02-02,Europe,Apparel,Winter Coat,1,210.00,0.20,168.00,PayPal,34,4.1,Low
+ORD-1013,CUST-2041,2025-02-05,North America,Electronics,Smart Watch,1,199.99,0.00,199.99,Credit Card,28,4.6,Low
+ORD-1014,CUST-3105,2025-02-08,Europe,Home & Kitchen,Air Fryer Pro,1,110.00,0.10,99.00,Credit Card,41,3.2,Medium
+ORD-1015,CUST-4819,2025-02-12,North America,Electronics,Gaming Mouse,2,59.99,0.05,113.98,Apple Pay,24,4.9,Low
+ORD-1016,CUST-5221,2025-02-15,Asia Pacific,Apparel,Leather Boots,1,180.00,0.15,153.00,Debit Card,37,2.0,High
+ORD-1017,CUST-6340,2025-02-18,Latin America,Electronics,Bluetooth Speaker,2,65.00,0.10,117.00,Credit Card,30,4.3,Low
+ORD-1018,CUST-7109,2025-02-22,North America,Books,Cybersecurity Fundamentals,2,45.00,0.00,90.00,Credit Card,27,5.0,Low
+ORD-1019,CUST-8812,2025-02-26,Europe,Beauty & Personal Care,Hair Dryer Brush,1,85.00,0.10,76.50,PayPal,48,3.6,Medium
+ORD-1020,CUST-9321,2025-03-01,Asia Pacific,Home & Kitchen,Blender High-Speed,1,130.00,0.20,104.00,Debit Card,50,2.3,High
+ORD-1021,CUST-1049,2025-03-04,North America,Electronics,USB-C Hub Multiport,3,35.00,0.10,94.50,Credit Card,31,4.8,Low
+ORD-1022,CUST-2041,2025-03-07,North America,Electronics,Wireless Charger Pad,2,29.99,0.00,59.98,Credit Card,28,4.7,Low
+ORD-1023,CUST-3904,2025-03-10,Asia Pacific,Sports & Outdoors,Adjustable Dumbbells,1,250.00,0.10,225.00,PayPal,45,1.9,High
+ORD-1024,CUST-4412,2025-03-14,Latin America,Apparel,Summer Dress,2,55.00,0.05,104.50,Credit Card,22,4.4,Low
+ORD-1025,CUST-5120,2025-03-18,Europe,Electronics,Ergonomic Chair,1,320.00,0.15,272.00,Credit Card,26,4.9,Low
+ORD-1026,CUST-6119,2025-03-21,North America,Sports & Outdoors,Camping Tent 4-Person,1,180.00,0.10,162.00,Apple Pay,39,3.8,Low
+ORD-1027,CUST-7231,2025-03-25,Europe,Electronics,Standing Desk Converter,1,210.00,0.10,189.00,Credit Card,29,4.6,Low
+ORD-1028,CUST-8302,2025-03-28,Asia Pacific,Books,Financial Analytics Handbook,2,50.00,0.00,100.00,Debit Card,52,2.5,High
+ORD-1029,CUST-9110,2025-04-02,Latin America,Home & Kitchen,Espresso Machine,1,299.00,0.15,254.15,PayPal,33,4.5,Low
+ORD-1030,CUST-1182,2025-04-05,Europe,Sports & Outdoors,Trekking Backpack,1,95.00,0.05,90.25,PayPal,34,4.0,Low
